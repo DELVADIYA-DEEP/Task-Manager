@@ -1,0 +1,179 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.floating-border-group {
+
+  position: relative;
+
+  margin-bottom: 1.5rem;
+
+}
+
+.floating-border-group input,
+
+.floating-border-group textarea {
+
+  width: 100%;
+
+  padding: 14px 12px 6px 12px;
+
+  font-size: 1rem;
+
+  border: 1px solid #ced4da;
+
+  border-radius: 6px;
+
+  background-color: transparent;
+
+  outline: none;
+
+}
+
+.floating-border-group label {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 12px;
+
+  transform: translateY(-50%);
+
+  background-color: white;
+
+  padding: 0 4px;
+
+  color: #6c757d;
+
+  transition: all 0.2s ease;
+
+  pointer-events: none;
+
+  font-size: 1rem;
+
+}
+
+.floating-border-group input:focus+label,
+
+.floating-border-group input:not(:placeholder-shown)+label,
+
+.floating-border-group textarea:focus+label,
+
+.floating-border-group textarea:not(:placeholder-shown)+label {
+
+  top: -0px;
+
+  font-size: 1.2rem;
+
+  color: #0d6efd;
+
+}
+
+/* toggle button for complete === In Progress */
+
+.checkbox-wrapper-36 * {
+  box-sizing: border-box;
+}
+
+.checkbox-wrapper-36 input {
+  display: none;
+}
+
+.checkbox-wrapper-36 label {
+  background: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  height: 28px;
+  width: 60px;
+  padding: 4px;
+  position: relative;
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.checkbox-wrapper-36 label:after {
+  animation: move-left-compact 400ms;
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  top: 4px;
+  left: 4px;
+  background: #E2E2E2 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24'%3E%3Cpath stroke='%23E2E2E2' fill='%23E2E2E2' stroke-linecap='round' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 12px;
+  transition: background 200ms linear;
+}
+
+.checkbox-wrapper-36 input:checked+label:after {
+  animation: move-right-compact 400ms;
+  left: 36px;
+  background: #6EB54E url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24'%3E%3Cpath stroke='white' fill='white' stroke-linecap='round' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E") no-repeat center;
+  background-size: 12px;
+}
+
+@keyframes move-right-compact {
+  0% {
+    left: 4px;
+  }
+
+  75% {
+    left: 40px;
+  }
+
+  100% {
+    left: 36px;
+  }
+}
+
+@keyframes move-left-compact {
+  0% {
+    left: 36px;
+  }
+
+  75% {
+    left: 0px;
+  }
+
+  100% {
+    left: 4px;
+  }
+}

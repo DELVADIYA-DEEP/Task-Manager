@@ -1,0 +1,92 @@
+/* Header.css */
+@media (max-width: 767.98px) {
+    .header-fixed-md {
+        position: static !important;
+    }
+}
+
+/* ===== Modern Header Style ===== */
+/* REMOVE this if present */
+.header-fixed-md {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+
+/* === Brand === */
+header .navbar-brand h3 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #111827;
+}
+
+/* === Search Form === */
+header .form-control {
+    border-radius: 0.5rem;
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 0.6rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+header .form-control:focus {
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    outline: none;
+}
+
+/* === Buttons (Search & Add Task) === */
+header .btn-light {
+    background-color: #10b981;
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease-in-out;
+}
+
+header .btn-light:hover {
+    background-color: #059669;
+}
+
+/* === Icon sizing for Add Task === */
+header button .fs-5 {
+    font-size: 1.2rem !important;
+}
+
+/* === Responsive Gap === */
+@media (max-width: 768px) {
+    header .container {
+        gap: 1rem;
+    }
+
+    header .w-50 {
+        width: 100% !important;
+    }
+}
+
+header.header-fixed-md {
+    animation: fadeInDown 0.4s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,26 @@
+/* Footer.css */
+.footer-custom {
+    background: #fff !important;
+    color: #222 !important;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+}
+.footer-custom p,
+.footer-custom a,
+.footer-custom .btn-outline-light {
+    color: #222 !important;
+}
+.footer-custom .btn-outline-light {
+    border-color: #222;
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+}
+.footer-custom .btn-outline-light:hover {
+    background: #222;
+    color: #fff !important;
+    border-color: #222;
+}
+@media (max-width: 767.98px) {
+    .footer-fixed-md {
+        position: static !important;
+    }
+}

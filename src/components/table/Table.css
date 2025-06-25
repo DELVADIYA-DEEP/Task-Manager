@@ -1,0 +1,100 @@
+/* ===== Modern Task Table Style ===== */
+
+.table {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    color: #1f2937;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.table-responsive {
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Table Header */
+thead.table-primary {
+    background-color: #10b981;
+    color: white;
+    font-weight: 600;
+}
+
+/* Table Cells */
+.table td,
+.table th {
+    vertical-align: middle;
+    padding: 0.75rem;
+}
+
+/* Hover Effect */
+.table tbody tr:hover {
+    background-color: #f9fafb;
+    transition: background-color 0.3s;
+}
+
+/* Status Button */
+.btn-status {
+    min-width: 100px;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+}
+
+.btn-status.btn-success {
+    background-color: #10b981;
+    color: white;
+}
+
+.btn-status.btn-warning {
+    background-color: #facc15;
+    color: #111827;
+}
+
+/* Action Buttons */
+td .btn {
+    border-radius: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    transition: background-color 0.2s ease;
+    font-size: 1rem;
+}
+
+td .btn-outline-primary:hover {
+    background-color: #3b82f6;
+    color: white;
+}
+
+td .btn-outline-success:hover {
+    background-color: #22c55e;
+    color: white;
+}
+
+td .btn-outline-danger:hover {
+    background-color: #ef4444;
+    color: white;
+}
+
+/* Dropdown (Status Filter) */
+.form-select {
+    font-size: 0.9rem;
+    border-radius: 0.5rem;
+    padding: 0.4rem 0.75rem;
+}
+
+/* Heading */
+.heading {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Responsive Table Container */
+.container {
+    border-radius: 1rem;
+    background-color: white;
+    padding: 1.5rem;
+}
