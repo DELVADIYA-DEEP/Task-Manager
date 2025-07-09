@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useRef } from 'react';
 import { NavbarBrand } from 'react-bootstrap';
 import { FaSearch } from "react-icons/fa";
 import { IoMdAddCircleOutline } from "react-icons/io";
@@ -7,11 +7,21 @@ import './Header.css';
 
 function Header() {
     const { setShowModal, search, handleSearch } = useContext(TaskContext);
+    const inputRef = useRef();
 
     const handleShow = () => {
         setShowModal(true);
     };
 
+    // Search button functionality: focus input and trigger search
+    const handleSearchButton = (e) => {
+        e.preventDefault();
+        if (inputRef.current) {
+            inputRef.current.focus();
+        }
+        // Optionally, you can trigger a search/filter here if needed
+        // For now, just focus the input and keep the value
+    };
 
     return (
         <header className="bg-primary text-white py-3 shadow-sm mb-4">
@@ -26,11 +36,16 @@ function Header() {
                 {/* Search */}
                 <div className="w-50 w-md-50">
                     <form className='d-flex flex-column flex-md-row align-items-stretch'
-                        onSubmit={(e) => e.preventDefault()}
+                        onSubmit={handleSearchButton}
                     >
-                        <input className='form-control' placeholder='Search Task...' aria-label="Search Task"
+                        <input
+                            ref={inputRef}
+                            className='form-control'
+                            placeholder='Search Task...'
+                            aria-label="Search Task"
                             value={search}
-                            onChange={handleSearch} />
+                            onChange={handleSearch}
+                        />
                         <button type='submit' className='btn btn-light ms-md-2 mt-2 mt-md-0 d-flex align-items-center gap-2 justify-content-center'>
                             <FaSearch />
                             <span className='fw-semibold text-uppercase'>Search</span>
