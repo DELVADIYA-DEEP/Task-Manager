@@ -12,7 +12,29 @@
 .footer-custom .btn-outline-light {
     border-color: #222;
     background: transparent;
+    position: relative;
+    overflow: hidden;
     transition: background 0.2s, color 0.2s;
+}
+.footer-custom .btn-outline-light::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.2) 100%);
+    transform: translateX(-100%) skewX(-20deg);
+    transition: transform 0.7s cubic-bezier(.4,0,.2,1);
+    pointer-events: none;
+    z-index: 1;
+}
+.footer-custom .btn-outline-light:hover::before {
+    transform: translateX(100%) skewX(-20deg);
+}
+.footer-custom .btn-outline-light > * {
+    position: relative;
+    z-index: 2;
 }
 .footer-custom .btn-outline-light:hover {
     background: #222;
