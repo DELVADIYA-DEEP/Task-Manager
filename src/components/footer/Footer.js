@@ -13,7 +13,7 @@ function Footer() {
                 {/* Social Links */}
                 <div className="d-flex justify-content-center gap-2">
                     <a
-                        href="https://www.linkedin.com/in/delvadiya-deep/"
+                        href="https://www.linkedin.com/in/delvadiyadeep"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-outline-light d-flex align-items-center gap-2 btn-sm"
