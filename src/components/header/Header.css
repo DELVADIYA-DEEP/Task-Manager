@@ -90,3 +90,36 @@ header.header-fixed-md {
         transform: translateY(0);
     }
 }
+
+@media (max-width: 767.98px) {
+    header .container {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 0.5rem !important;
+        padding: 0.5rem 0.5rem !important;
+    }
+    header .text-center,
+    header .text-md-start,
+    header .text-md-end {
+        text-align: center !important;
+    }
+    header .w-50,
+    header .w-md-50 {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+    header form {
+        flex-direction: column !important;
+        gap: 0.5rem;
+    }
+    header .btn-light {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.8rem 0;
+        justify-content: center;
+    }
+    header .form-control {
+        font-size: 1rem;
+        padding: 0.8rem 0.75rem;
+    }
+}

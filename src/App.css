@@ -177,3 +177,22 @@
     left: 4px;
   }
 }
+
+@media (max-width: 767.98px) {
+  .App {
+    padding: 0 !important;
+    min-height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .App-header {
+    min-height: 60vh;
+    font-size: 1.1rem;
+    padding: 1rem 0.5rem;
+  }
+  .floating-border-group input,
+  .floating-border-group textarea {
+    font-size: 1rem;
+    padding: 12px 8px 6px 8px;
+  }
+}

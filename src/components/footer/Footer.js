@@ -4,7 +4,7 @@ import './Footer.css';
 
 function Footer() {
     return (
-        <footer className="footer-custom py-3 mt-auto shadow-sm position-fixed bottom-0 start-0 end-0 z-3 footer-fixed-md">
+        <footer className="footer-custom py-3 mt-auto shadow-sm bottom-0 start-0 end-0 z-3 footer-fixed-md">
             <div className="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-2 text-center text-md-start">
                 {/* Made by */}
                 <p className="mb-0 fs-6">Made by Deep Delvadiya</p>
