@@ -7,7 +7,7 @@ import ViewTask from '../modalForm/ViewTask';
 import Atom from '../Atom';
 import './Table.css';
 
-function TaskTable() {
+function TaskTable({ onDelete }) {
     const { task, handleOpenEdit, handleDelete, search, handleOpenView, toggleTaskStatus, statusFilter, setStatusFilter } = useContext(TaskContext);
     const [loading, setLoading] = useState(true);
     const [filterTask, setFilterTask] = useState([]);
@@ -119,7 +119,7 @@ function TaskTable() {
                     </div>
                 </div>
             </section>
-            <DeleteModal />
+            <DeleteModal onDelete={onDelete} />
             <ViewTask />
         </>
     );

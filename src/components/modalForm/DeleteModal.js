@@ -3,7 +3,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { TaskContext } from '../../context/TaskContext';
 
-function DeleteModal() {
+function DeleteModal({ onDelete }) {
     const {
         taskToDelete,
         confirmDelete,
@@ -12,6 +12,11 @@ function DeleteModal() {
     } = useContext(TaskContext);
 
     if (!taskToDelete) return null;
+
+    const handleDelete = () => {
+        confirmDelete();
+        if (onDelete) onDelete();
+    };
 
     return (
         <Modal show={deleteModal} onHide={handleCloseDelete} centered>
@@ -26,7 +31,7 @@ function DeleteModal() {
                 <Button variant="secondary" onClick={handleCloseDelete}>
                     Cancel
                 </Button>
-                <Button variant="danger" onClick={confirmDelete}>
+                <Button variant="danger" onClick={handleDelete}>
                     Delete
                 </Button>
             </Modal.Footer>
