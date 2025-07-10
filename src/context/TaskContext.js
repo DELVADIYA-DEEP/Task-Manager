@@ -25,6 +25,9 @@ function TaskProvider({ children }) {
     // Status filter
     const [statusFilter, setStatusFilter] = useState('All');
 
+    // Category filter
+    const [categoryFilter, setCategoryFilter] = useState('All');
+
     // Add Task
     const addTask = (newTask) => {
         setTask((prev) => [...prev, newTask]);
@@ -134,7 +137,11 @@ function TaskProvider({ children }) {
 
         //status filter
         statusFilter,
-        setStatusFilter
+        setStatusFilter,
+
+        // category filter
+        categoryFilter,
+        setCategoryFilter
     };
 
     return (

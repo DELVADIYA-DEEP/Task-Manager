@@ -15,11 +15,14 @@ function AddTask() {
         formState: { errors, isSubmitting }
     } = useForm();
 
+    const categoryOptions = ['Work', 'Personal', 'Urgent', 'Other'];
+
     const onSubmit = async (taskData) => {
         const newTask = {
             id: Date.now(),
             name: taskData.taskTitle,
             description: taskData.taskDescription,
+            category: taskData.category,
             progress: 0,
             status: "In Progress"
         };
@@ -68,6 +71,24 @@ function AddTask() {
                         <label htmlFor="taskDescription">Description</label>
                         {errors.taskDescription && (
                             <small className="text-danger">{errors.taskDescription.message}</small>
+                        )}
+                    </div>
+
+                    {/* Category */}
+                    <div className="form-floating mb-3">
+                        <select
+                            className="form-select"
+                            id="taskCategory"
+                            defaultValue="Work"
+                            {...register('category', { required: 'Category is required' })}
+                        >
+                            {categoryOptions.map((cat) => (
+                                <option key={cat} value={cat}>{cat}</option>
+                            ))}
+                        </select>
+                        <label htmlFor="taskCategory">Category</label>
+                        {errors.category && (
+                            <small className="text-danger">{errors.category.message}</small>
                         )}
                     </div>
 

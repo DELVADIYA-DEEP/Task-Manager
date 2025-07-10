@@ -20,11 +20,14 @@ function EditTask() {
     formState: { errors, isSubmitting }
   } = useForm();
 
+  const categoryOptions = ['Work', 'Personal', 'Urgent', 'Other'];
+
   useEffect(() => {
     if (currentTask) {
       reset({
         projectName: currentTask.name,
-        taskDescription: currentTask.description
+        taskDescription: currentTask.description,
+        category: currentTask.category || 'Work',
       });
     }
   }, [currentTask, reset]);
@@ -34,6 +37,7 @@ function EditTask() {
       ...currentTask,
       name: data.projectName,
       description: data.taskDescription,
+      category: data.category,
     };
 
     updateTask(updatedTask);
@@ -80,6 +84,23 @@ function EditTask() {
             <label htmlFor="editProjectDescription">Description</label>
             {errors.taskDescription && (
               <small className="text-danger">{errors.taskDescription.message}</small>
+            )}
+          </div>
+
+          {/* Category */}
+          <div className="form-floating mb-3">
+            <select
+              className="form-select"
+              id="editTaskCategory"
+              {...register('category', { required: 'Category is required' })}
+            >
+              {categoryOptions.map((cat) => (
+                <option key={cat} value={cat}>{cat}</option>
+              ))}
+            </select>
+            <label htmlFor="editTaskCategory">Category</label>
+            {errors.category && (
+              <small className="text-danger">{errors.category.message}</small>
             )}
           </div>
 

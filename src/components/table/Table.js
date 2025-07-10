@@ -8,7 +8,8 @@ import Atom from '../Atom';
 import './Table.css';
 
 function TaskTable({ onDelete }) {
-    const { task, handleOpenEdit, handleDelete, search, handleOpenView, toggleTaskStatus, statusFilter, setStatusFilter } = useContext(TaskContext);
+    const { task, handleOpenEdit, handleDelete, search, handleOpenView, toggleTaskStatus, statusFilter, setStatusFilter, categoryFilter, setCategoryFilter } = useContext(TaskContext);
+    const categoryOptions = ['All', 'Work', 'Personal', 'Urgent', 'Other'];
     const [loading, setLoading] = useState(true);
     const [filterTask, setFilterTask] = useState([]);
 
@@ -21,13 +22,14 @@ function TaskTable({ onDelete }) {
                 const query = search.toLowerCase().replace(/\s/g, "");
                 const matchesSearch = Task_name.includes(query);
                 const matchesStatus = statusFilter === 'All' || task.status === statusFilter;
-                return matchesSearch && matchesStatus;
+                const matchesCategory = categoryFilter === 'All' || task.category === categoryFilter;
+                return matchesSearch && matchesStatus && matchesCategory;
             }) || [];
             setFilterTask(filtered);
             setLoading(false);
         }, 900); // 900ms loading effect
         return () => clearTimeout(timeout);
-    }, [task, search, statusFilter]);
+    }, [task, search, statusFilter, categoryFilter]);
 
     return (
         <>
@@ -36,16 +38,28 @@ function TaskTable({ onDelete }) {
                     {/* Header */}
                     <div className='d-flex align-items-center justify-content-between mb-3 px-2 border-1 border-bottom border-dark pb-3'>
                         <div className="heading fs-4 fw-medium">Tasks</div>
-                        <div>
+                        <div className="d-flex gap-2">
                             <Form.Select
                                 aria-label="Filter tasks by status"
                                 className="border border-1 border-dark"
                                 value={statusFilter}
                                 onChange={(e) => setStatusFilter(e.target.value)}
+                                style={{ minWidth: 120 }}
                             >
-                                <option value="All">All</option>
+                                <option value="All">All Status</option>
                                 <option value="Complete">Complete</option>
                                 <option value="In Progress">In Progress</option>
+                            </Form.Select>
+                            <Form.Select
+                                aria-label="Filter tasks by category"
+                                className="border border-1 border-dark"
+                                value={categoryFilter}
+                                onChange={(e) => setCategoryFilter(e.target.value)}
+                                style={{ minWidth: 120 }}
+                            >
+                                {categoryOptions.map((cat) => (
+                                    <option key={cat} value={cat}>{cat}</option>
+                                ))}
                             </Form.Select>
                         </div>
                     </div>
@@ -62,6 +76,7 @@ function TaskTable({ onDelete }) {
                                         <th>No</th>
                                         <th>Task Name</th>
                                         <th>Description</th>
+                                        <th>Category</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
@@ -69,7 +84,7 @@ function TaskTable({ onDelete }) {
                                 <tbody className="text-center">
                                     {filterTask.length === 0 ? (
                                         <tr>
-                                            <td colSpan="6">No tasks found.</td>
+                                            <td colSpan="7">No tasks found.</td>
                                         </tr>
                                     ) : (
                                         filterTask.map((task, index) => (
@@ -77,10 +92,11 @@ function TaskTable({ onDelete }) {
                                                 <td data-label="No">{index + 1}</td>
                                                 <td data-label="Task Name">{task.name}</td>
                                                 <td data-label="Description">{task.description}</td>
+                                                <td data-label="Category">{task.category || '-'}</td>
                                                 <td data-label="Status">
                                                     <button
-                                                        className={`btn btn-sm d-inline-flex justify-content-center align-items-center 
-            ${task.status === 'Complete' ? 'btn-success' : 'btn-warning text-dark'}`}
+                                                        className={`btn btn-sm d-inline-flex justify-content-center align-items-center \
+${task.status === 'Complete' ? 'btn-success' : 'btn-warning text-dark'}`}
                                                         onClick={() => toggleTaskStatus(task.id)}
                                                         style={{ minWidth: '100px' }}
                                                     >

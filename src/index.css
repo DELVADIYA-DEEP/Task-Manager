@@ -1,3 +1,17 @@
+/* Color palette based on color psychology */
+:root {
+  --color-primary: #2563EB;
+  --color-success: #22C55E;
+  --color-warning: #F59E0B;
+  --color-error: #DC2626;
+  --color-bg: #F9FAFB;
+  --color-surface: #FFFFFF;
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-border: #E5E7EB;
+  --color-dark-bg: #1E293B;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,11 +19,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+  color: var(--color-primary);
 }
 
 @media (max-width: 767.98px) {
@@ -23,4 +40,36 @@ code {
   code {
     font-size: 14px;
   }
+}
+
+/* Utility classes */
+.bg-primary {
+  background-color: var(--color-primary) !important;
+}
+.bg-success {
+  background-color: var(--color-success) !important;
+}
+.bg-warning {
+  background-color: var(--color-warning) !important;
+}
+.bg-error {
+  background-color: var(--color-error) !important;
+}
+.text-primary {
+  color: var(--color-primary) !important;
+}
+.text-success {
+  color: var(--color-success) !important;
+}
+.text-warning {
+  color: var(--color-warning) !important;
+}
+.text-error {
+  color: var(--color-error) !important;
+}
+.text-secondary {
+  color: var(--color-text-secondary) !important;
+}
+.border {
+  border-color: var(--color-border) !important;
 }

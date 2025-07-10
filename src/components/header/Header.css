@@ -20,29 +20,30 @@
 header .navbar-brand h3 {
     font-weight: 700;
     font-size: 1.5rem;
-    color: #111827;
+    color: var(--color-text-primary);
 }
 
 /* === Search Form === */
 header .form-control {
     border-radius: 0.5rem;
-    background-color: #f3f4f6;
-    border: 1px solid #d1d5db;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
     padding: 0.6rem 1rem;
     font-size: 0.95rem;
     transition: all 0.3s ease;
+    color: var(--color-text-primary);
 }
 
 header .form-control:focus {
-    border-color: #10b981;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
     outline: none;
 }
 
 /* === Buttons (Search & Add Task) === */
 header .btn-light {
-    background-color: #10b981;
-    color: #ffffff;
+    background-color: var(--color-primary);
+    color: var(--color-surface);
     font-weight: 600;
     text-transform: uppercase;
     border: none;
@@ -56,7 +57,11 @@ header .btn-light {
 }
 
 header .btn-light:hover {
-    background-color: #059669;
+    background-color: #1d4ed8;
+}
+
+header .btn-light:active {
+    background-color: var(--color-primary);
 }
 
 /* === Icon sizing for Add Task === */

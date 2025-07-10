@@ -33,6 +33,9 @@ const ViewTask = () => {
                         {ViewTask?.status || 'No Status'}
                     </span>
                 </p>
+
+                <h5>Category:</h5>
+                <p>{ViewTask?.category || 'No Category'}</p>
             </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={handleCloseView}>

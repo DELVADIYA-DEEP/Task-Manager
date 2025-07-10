@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
 }
 
 .App-logo {
@@ -14,18 +16,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--color-primary);
+  color: var(--color-surface);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--color-primary);
 }
 
 @keyframes App-logo-spin {
@@ -56,11 +58,13 @@
 
   font-size: 1rem;
 
-  border: 1px solid #ced4da;
+  border: 1px solid var(--color-border);
 
   border-radius: 6px;
 
-  background-color: transparent;
+  background-color: var(--color-surface);
+
+  color: var(--color-text-primary);
 
   outline: none;
 
@@ -76,11 +80,11 @@
 
   transform: translateY(-50%);
 
-  background-color: white;
+  background-color: var(--color-surface);
 
   padding: 0 4px;
 
-  color: #6c757d;
+  color: var(--color-text-secondary);
 
   transition: all 0.2s ease;
 
@@ -102,7 +106,7 @@
 
   font-size: 1.2rem;
 
-  color: #0d6efd;
+  color: var(--color-primary);
 
 }
 
@@ -117,8 +121,8 @@
 }
 
 .checkbox-wrapper-36 label {
-  background: white;
-  border: 1px solid black;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
   border-radius: 10px;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -146,7 +150,7 @@
 .checkbox-wrapper-36 input:checked+label:after {
   animation: move-right-compact 400ms;
   left: 36px;
-  background: #6EB54E url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24'%3E%3Cpath stroke='white' fill='white' stroke-linecap='round' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E") no-repeat center;
+  background: var(--color-success) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24'%3E%3Cpath stroke='white' fill='white' stroke-linecap='round' d='M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z'/%3E%3C/svg%3E") no-repeat center;
   background-size: 12px;
 }
 
