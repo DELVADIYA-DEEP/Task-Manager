@@ -118,3 +118,54 @@ td .btn-outline-danger:hover {
         padding: 0.5rem;
     }
 }
+
+@media (max-width: 600px) {
+  .table, .table thead, .table tbody, .table th, .table td, .table tr {
+    display: block;
+    width: 100%;
+  }
+  .table {
+    min-width: unset;
+    font-size: 1rem;
+  }
+  .table tr {
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .table td {
+    border: none;
+    padding: 0.25rem 0;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    word-break: break-word;
+  }
+  .table thead { display: none; }
+  .table td:before {
+    content: attr(data-label);
+    font-weight: 600;
+    min-width: 110px;
+    margin-right: 0.5rem;
+    color: #888;
+    display: inline-block;
+  }
+  .table-responsive {
+    padding: 0;
+    box-shadow: none;
+  }
+  .container {
+    padding: 0.5rem !important;
+  }
+  .btn, .btn-sm, .btn-outline-primary, .btn-outline-success, .btn-outline-danger {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}

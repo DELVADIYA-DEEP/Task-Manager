@@ -41,8 +41,32 @@
     color: #fff !important;
     border-color: #222;
 }
+.footer-social-btn {
+    min-width: 44px;
+    min-height: 44px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
 @media (max-width: 767.98px) {
     .footer-fixed-md {
         position: static !important;
+    }
+    .footer-custom .container {
+        flex-direction: column !important;
+        gap: 0.5rem !important;
+        padding: 0.5rem 0.5rem !important;
+    }
+    .footer-social-btn span {
+        display: none !important;
+    }
+    .footer-social-btn {
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+    }
+    .footer-custom p {
+        font-size: 1rem !important;
     }
 }

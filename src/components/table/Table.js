@@ -74,10 +74,10 @@ function TaskTable() {
                                     ) : (
                                         filterTask.map((task, index) => (
                                             <tr key={task.id}>
-                                                <td>{index + 1}</td>
-                                                <td>{task.name}</td>
-                                                <td>{task.description}</td>
-                                                <td>
+                                                <td data-label="No">{index + 1}</td>
+                                                <td data-label="Task Name">{task.name}</td>
+                                                <td data-label="Description">{task.description}</td>
+                                                <td data-label="Status">
                                                     <button
                                                         className={`btn btn-sm d-inline-flex justify-content-center align-items-center 
             ${task.status === 'Complete' ? 'btn-success' : 'btn-warning text-dark'}`}
@@ -87,7 +87,7 @@ function TaskTable() {
                                                         {task.status}
                                                     </button>
                                                 </td>
-                                                <td className='d-flex align-items-center justify-content-evenly'>
+                                                <td data-label="Actions" className='d-flex align-items-center justify-content-evenly'>
                                                     <button
                                                         className='btn btn-sm btn-outline-primary fs-4 d-flex align-items-center justify-content-center'
                                                         title="View"
