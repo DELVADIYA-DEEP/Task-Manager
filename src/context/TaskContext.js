@@ -1,9 +1,13 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 export const TaskContext = createContext();
 
 function TaskProvider({ children }) {
-    const [task, setTask] = useState([]);
+    // Initialize tasks from localStorage
+    const [task, setTask] = useState(() => {
+        const storedTasks = localStorage.getItem('tasks');
+        return storedTasks ? JSON.parse(storedTasks) : [];
+    });
     const [showModal, setShowModal] = useState(false);
 
     // Edit modal state
@@ -99,6 +103,10 @@ function TaskProvider({ children }) {
         );
     };
 
+    // Save tasks to localStorage whenever they change
+    useEffect(() => {
+        localStorage.setItem('tasks', JSON.stringify(task));
+    }, [task]);
 
     const value = {
         task,
